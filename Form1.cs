@@ -27,5 +27,10 @@ namespace integra_1
                 MessageBox.Show("Usuario o contraseña incorrectos");
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

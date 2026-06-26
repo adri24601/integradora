@@ -8,16 +8,11 @@ using System.Windows.Forms;
 
 namespace integra_1
 {
-    public partial class FrmProductos : Form
+    public partial class FrmReportes : Form
     {
-        public FrmProductos()
+        public FrmReportes()
         {
             InitializeComponent();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

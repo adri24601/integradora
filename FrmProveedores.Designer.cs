@@ -1,6 +1,6 @@
 ﻿namespace integra_1
 {
-    partial class FrmProductos
+    partial class FrmProveedores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
             SuspendLayout();
             // 
-            // button1
+            // tableLayoutPanel1
             // 
-            button1.Location = new Point(567, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(221, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Agregar Producto";
-            button1.UseVisualStyleBackColor = true;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Location = new Point(355, 116);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(300, 150);
+            tableLayoutPanel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(541, 316);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
-            // 
-            // FrmProductos
+            // FrmProveedores
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(button1);
-            Name = "FrmProductos";
+            Controls.Add(tableLayoutPanel1);
+            Name = "FrmProveedores";
             Text = "Form2";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Label label1;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

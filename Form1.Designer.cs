@@ -103,6 +103,7 @@
             Controls.Add(btnInicio);
             Name = "Form1";
             Text = "Sesion";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
