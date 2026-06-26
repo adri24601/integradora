@@ -30,6 +30,8 @@
         {
             button1 = new Button();
             label1 = new Label();
+            dgvProductos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -44,21 +46,34 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(541, 316);
+            label1.Location = new Point(395, 25);
             label1.Name = "label1";
             label1.Size = new Size(59, 25);
             label1.TabIndex = 2;
             label1.Text = "label1";
+            // 
+            // dgvProductos
+            // 
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Location = new Point(251, 56);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 62;
+            dgvProductos.Size = new Size(515, 353);
+            dgvProductos.TabIndex = 3;
+            dgvProductos.DataError += dgvProductos_DataError;
             // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dgvProductos);
             Controls.Add(label1);
             Controls.Add(button1);
             Name = "FrmProductos";
             Text = "Form2";
+            Load += FrmProductos_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -67,5 +82,6 @@
 
         private Button button1;
         private Label label1;
+        private DataGridView dgvProductos;
     }
 }
