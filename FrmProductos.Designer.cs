@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(567, 12);
+            button1.Location = new Point(567, 3);
             button1.Name = "button1";
             button1.Size = new Size(221, 38);
             button1.TabIndex = 0;
@@ -46,7 +46,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(395, 25);
+            label1.Location = new Point(402, 16);
             label1.Name = "label1";
             label1.Size = new Size(59, 25);
             label1.TabIndex = 2;
@@ -55,10 +55,10 @@
             // dgvProductos
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(251, 56);
+            dgvProductos.Location = new Point(159, 53);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(515, 353);
+            dgvProductos.Size = new Size(640, 394);
             dgvProductos.TabIndex = 3;
             dgvProductos.DataError += dgvProductos_DataError;
             // 
