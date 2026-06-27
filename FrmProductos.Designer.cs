@@ -36,9 +36,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(567, 3);
+            button1.Location = new Point(276, 5);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(221, 38);
+            button1.Size = new Size(155, 23);
             button1.TabIndex = 0;
             button1.Text = "Agregar Producto";
             button1.UseVisualStyleBackColor = true;
@@ -46,30 +47,33 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(402, 16);
+            label1.Location = new Point(157, 15);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(59, 25);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 2;
             label1.Text = "label1";
             // 
             // dgvProductos
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(159, 53);
+            dgvProductos.Location = new Point(111, 32);
+            dgvProductos.Margin = new Padding(2, 2, 2, 2);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(640, 394);
+            dgvProductos.Size = new Size(448, 236);
             dgvProductos.TabIndex = 3;
             dgvProductos.DataError += dgvProductos_DataError;
             // 
             // FrmProductos
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(560, 270);
             Controls.Add(dgvProductos);
             Controls.Add(label1);
             Controls.Add(button1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "FrmProductos";
             Text = "Form2";
             Load += FrmProductos_Load;
