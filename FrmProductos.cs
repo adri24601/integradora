@@ -61,5 +61,43 @@ namespace integra_1
             // Esto le dice al DataGridView: "Si encuentras una imagen extraña, no lances nigun cartel de error"
             e.ThrowException = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Asegúrate de que el nombre coincida letra por letra con tu nuevo Form
+            FrmAgregarProductos ventanaAgregar = new FrmAgregarProductos();
+            ventanaAgregar.ShowDialog();
+
+            // Si ya tienes el método para actualizar la tabla, llámalo aquí abajo:
+
+        }
+
+        private void btnModificarProducto_Click(object sender, EventArgs e)
+        {
+            // 1. Validamos que haya una fila seleccionada en tu tabla
+            if (dgvProductos.CurrentRow != null)
+            {
+                // 2. Creamos la instancia usando el nombre real de tu ventana
+                FrmAgregarProductos ventanaEdicion = new FrmAgregarProductos();
+
+                // 3. Rellenamos los campos de la ventana emergente con lo seleccionado en la tabla
+                // (Revisa que los nombres de las celdas ["Id_Producto"], etc., sean exactamente los de tu Access)
+                ventanaEdicion.txtId_Producto.Text = dgvProductos.CurrentRow.Cells["Id_Producto"].Value.ToString();
+                ventanaEdicion.txtNombre_Producto.Text = dgvProductos.CurrentRow.Cells["Nombre_Producto"].Value.ToString();
+                ventanaEdicion.txtMarca_Producto.Text = dgvProductos.CurrentRow.Cells["Marca_Producto"].Value.ToString();
+                ventanaEdicion.txtPrecio_Producto.Text = dgvProductos.CurrentRow.Cells["Precio_Producto"].Value.ToString();
+                ventanaEdicion.txtImagen.Text = dgvProductos.CurrentRow.Cells["Imagen_Producto"].Value.ToString();
+
+                // 4. Mostramos la ventana llena con los datos
+                ventanaEdicion.ShowDialog();
+
+                // 5. Al cerrarse, refresca la tabla automáticamente para ver los cambios
+            
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona primero un producto de la tabla gris.");
+            }
+        }
     }
 }
