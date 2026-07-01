@@ -42,11 +42,11 @@ namespace integra_1
                     {
                         // Pasamos los parámetros en el mismo orden que aparecen en el INSERT
                         comando.Parameters.AddWithValue("@idproveedor", Convert.ToInt32(txtId_Proveedor.Text));
-                        comando.Parameters.AddWithValue("@nombre", txtProveedor_Nombre.Text);
-                        comando.Parameters.AddWithValue("@empresa", txtProveedor_Empresa.Text);
-                        comando.Parameters.AddWithValue("@telefono", txtProveedor_Telefono.Text);
-                        comando.Parameters.AddWithValue("@correo", txtProveedor_Correo.Text);
-                        comando.Parameters.AddWithValue("@direccion", txtProveedor_Direccion.Text);
+                        comando.Parameters.AddWithValue("@nombre_proveedor", txtProveedor_Nombre.Text);
+                        comando.Parameters.AddWithValue("@empresa_proveedor", txtProveedor_Empresa.Text);
+                        comando.Parameters.AddWithValue("@telefono_proveedor", txtProveedor_Telefono.Text);
+                        comando.Parameters.AddWithValue("@correo_proveedor", txtProveedor_Correo.Text);
+                        comando.Parameters.AddWithValue("@direccion_proveedor", txtProveedor_Direccion.Text);
                         comando.Parameters.AddWithValue("@idproducto2", Convert.ToInt32(txtId_Producto2.Text));
 
 

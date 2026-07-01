@@ -32,13 +32,13 @@ namespace integra_1
                     OleDbDataAdapter adaptador = new OleDbDataAdapter(consulta, conexion);
 
                     //creamos tabla en memoria para guardar lo que traiga Access
-                    System.Data.DataTable tablaProvedores = new System.Data.DataTable();
+                    System.Data.DataTable tablaProveedores = new System.Data.DataTable();
 
                     // Llenamos la tabla en memoria con los datos
-                    adaptador.Fill(tablaProvedores);
+                    adaptador.Fill(tablaProveedores);
 
                     //decir a DataGridView que su fuente de datos es la tabla de acces
-                    dgvProveedores.DataSource = tablaProvedores;
+                    dgvProveedores.DataSource = tablaProveedores;
 
 
                 }
@@ -67,7 +67,7 @@ namespace integra_1
                 ventanaEdicion.txtProveedor_Telefono.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Telefono"].Value.ToString();
                 ventanaEdicion.txtProveedor_Correo.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Correo"].Value.ToString();
                 ventanaEdicion.txtProveedor_Direccion.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Direccion"].Value.ToString();
-                ventanaEdicion.txtId_Producto2.Text = dgvProveedores.CurrentRow.Cells["Id_Producto2"].Value.ToString();
+                ventanaEdicion.txtId_Producto2.Text = dgvProveedores.CurrentRow.Cells["Id_Producto"].Value.ToString();
 
 
                 // 4. Mostramos la ventana llena con los datos
