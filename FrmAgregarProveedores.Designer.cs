@@ -213,6 +213,7 @@
             Controls.Add(btnModificarProveedor);
             Name = "FrmAgregarProveedores";
             Text = "Form2";
+            Load += FrmAgregarProveedores_Load;
             ResumeLayout(false);
             PerformLayout();
         }

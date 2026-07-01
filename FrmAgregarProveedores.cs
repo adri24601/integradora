@@ -32,7 +32,7 @@ namespace integra_1
             string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
 
             // 3. Consulta SQL completa con los 4 campos (los signos '?' se sustituyen en orden exacto abajo)
-            string consulta = "INSERT INTO Proveedores (Id_Proveedor, Proveedor_Nombre, Proveedor_Empresa, Proveedor_Telefono, Proveedor_Correo, Id_Producto2) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            string consulta = "INSERT INTO Proveedores ([Id_Proveedor], [Proveedor_Nombre], [Proveedor_Empresa], [Proveedor_Telefono], [Proveedor_Correo], [Proveedor_Direccion], [Id_Producto]) VALUES (?, ?, ?, ?, ?, ?, ?);";
 
             try
             {
@@ -41,19 +41,13 @@ namespace integra_1
                     using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                     {
                         // Pasamos los parámetros en el mismo orden que aparecen en el INSERT
-                        comando.Parameters.AddWithValue("@idproveedor", Convert.ToInt32(txtId_Proveedor.Text));
+                        comando.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
                         comando.Parameters.AddWithValue("@nombre_proveedor", txtProveedor_Nombre.Text);
                         comando.Parameters.AddWithValue("@empresa_proveedor", txtProveedor_Empresa.Text);
                         comando.Parameters.AddWithValue("@telefono_proveedor", txtProveedor_Telefono.Text);
                         comando.Parameters.AddWithValue("@correo_proveedor", txtProveedor_Correo.Text);
                         comando.Parameters.AddWithValue("@direccion_proveedor", txtProveedor_Direccion.Text);
-                        comando.Parameters.AddWithValue("@idproducto2", Convert.ToInt32(txtId_Producto2.Text));
-
-
-
-
-
-
+                        comando.Parameters.AddWithValue("@id_producto", Convert.ToInt32(txtId_Producto2.Text));
 
                         conexion.Open();
                         comando.ExecuteNonQuery(); // Guarda la fila completa en Access
@@ -72,7 +66,7 @@ namespace integra_1
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
@@ -81,7 +75,7 @@ namespace integra_1
             if (respuesta == DialogResult.No) return;
 
             string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
-            string consulta = "DELETE FROM Proveedor WHERE Id_Proveedor = ?";
+            string consulta = "DELETE FROM Proveedores WHERE Id_Proveedor = ?";
 
             try
             {
@@ -89,12 +83,13 @@ namespace integra_1
                 {
                     using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue("@idproveedor", Convert.ToInt32(txtId_Proveedor.Text));
+                        // Solo dejamos el parámetro que pide el '?' de la consulta anterior
+                        comando.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
 
                         conexion.Open();
                         comando.ExecuteNonQuery();
 
-                        MessageBox.Show("Producto eliminado con éxito.");
+                        MessageBox.Show("Producto eliminado con éxito."); // Nota: Si es la sección de proveedores, quizás quieras cambiar el texto a "Proveedor eliminado con éxito."
                         this.Close();
                     }
                 }
@@ -103,6 +98,11 @@ namespace integra_1
             {
                 MessageBox.Show("Error al eliminar: " + ex.Message);
             }
+        }
+
+        private void FrmAgregarProveedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

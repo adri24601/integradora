@@ -16,40 +16,36 @@ namespace integra_1
             InitializeComponent();
         }
 
-        private void FrmProveedores_Load(object sender, EventArgs e)
+        // 1. Creamos la función que limpia y vuelve a rellenar la tabla
+        private void CargarProveedores()
         {
-            //ruta 
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
-            //consulta a SQL para traer los "productos"
-            // En lugar de usar el asterisco (*), escribe las columnas de texto y números separadas por comas
+            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;"; // Pon tu ruta completa aquí
             string consulta = "SELECT * FROM Proveedores";
 
             try
             {
                 using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
                 {
-                    //adaptador sirve como puente , hace la consulta y se enarga de abrir/cerrar la conexion solo
                     OleDbDataAdapter adaptador = new OleDbDataAdapter(consulta, conexion);
-
-                    //creamos tabla en memoria para guardar lo que traiga Access
                     System.Data.DataTable tablaProveedores = new System.Data.DataTable();
 
-                    // Llenamos la tabla en memoria con los datos
                     adaptador.Fill(tablaProveedores);
-
-                    //decir a DataGridView que su fuente de datos es la tabla de acces
                     dgvProveedores.DataSource = tablaProveedores;
-
-
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar productos:  " + ex.Message);
+                MessageBox.Show("Error al cargar proveedores: " + ex.Message);
             }
+        }
+        private void FrmProveedores_Load(object sender, EventArgs e)
+        {
+            CargarProveedores();
+      
         }
 
     
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -73,6 +69,15 @@ namespace integra_1
                 // 4. Mostramos la ventana llena con los datos
                 ventanaEdicion.ShowDialog();
 
+                // ... Todo tu código anterior donde rellenas los campos ...
+                ventanaEdicion.txtId_Producto2.Text = dgvProveedores.CurrentRow.Cells["Id_Producto"].Value.ToString();
+
+                // 4. Mostramos la ventana llena con los datos
+                ventanaEdicion.ShowDialog();
+
+                // 5. Al cerrarse, refresca la tabla automáticamente para ver los cambios
+                CargarProveedores();
+
                 // 5. Al cerrarse, refresca la tabla automáticamente para ver los cambios
 
             }
@@ -80,15 +85,16 @@ namespace integra_1
             {
                 MessageBox.Show("Por favor, selecciona primero un producto de la tabla gris.");
             }
+
         }
 
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
-            // Asegúrate de que el nombre coincida letra por letra con tu nuevo Form
             FrmAgregarProveedores ventanaAgregar = new FrmAgregarProveedores();
             ventanaAgregar.ShowDialog();
 
             // Si ya tienes el método para actualizar la tabla, llámalo aquí abajo:
+            CargarProveedores();
 
         }
 

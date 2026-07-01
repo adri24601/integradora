@@ -39,15 +39,15 @@ namespace integra_1
                     using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                     {
                         // Pasamos los parámetros en el mismo orden que aparecen en el INSERT
-                        comando.Parameters.AddWithValue("@id", Convert.ToInt32(txtId_Producto.Text));
-                        comando.Parameters.AddWithValue("@nombre", txtNombre_Producto.Text);
-                        comando.Parameters.AddWithValue("@marca", txtMarca_Producto.Text);
+                        comando.Parameters.AddWithValue("@id_producto", Convert.ToInt32(txtId_Producto.Text));
+                        comando.Parameters.AddWithValue("@nombre_producto", txtNombre_Producto.Text);
+                        comando.Parameters.AddWithValue("@marca_producto", txtMarca_Producto.Text);
 
                         // Convertimos el texto del precio a número decimal/entero para que Access lo guarde bien
-                        comando.Parameters.AddWithValue("@precio", Convert.ToDecimal(txtPrecio_Producto.Text));
+                        comando.Parameters.AddWithValue("@precio_producto", Convert.ToDecimal(txtPrecio_Producto.Text));
 
                         // Por ahora pasamos el texto de la imagen (como "arroz.png" o el link)
-                        comando.Parameters.AddWithValue("@imagen", txtImagen.Text);
+                        comando.Parameters.AddWithValue("@imagen_producto", txtImagen.Text);
 
                         conexion.Open();
                         comando.ExecuteNonQuery(); // Guarda la fila completa en Access
@@ -83,7 +83,7 @@ namespace integra_1
                 {
                     using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue("@id", Convert.ToInt32(txtId_Producto.Text));
+                        comando.Parameters.AddWithValue("@id_producto", Convert.ToInt32(txtId_Producto.Text));
 
                         conexion.Open();
                         comando.ExecuteNonQuery();
@@ -97,6 +97,11 @@ namespace integra_1
             {
                 MessageBox.Show("Error al eliminar: " + ex.Message);
             }
+        }
+
+        private void FrmAgregarProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

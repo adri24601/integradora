@@ -210,6 +210,7 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "FrmAgregarProductos";
             Text = "Form2";
+            Load += FrmAgregarProductos_Load;
             ResumeLayout(false);
             PerformLayout();
         }
