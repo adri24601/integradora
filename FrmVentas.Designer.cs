@@ -126,6 +126,7 @@
             Controls.Add(btnAgregar_Venta);
             Name = "FrmVentas";
             Text = "Form2";
+            Load += FrmVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).EndInit();
             ResumeLayout(false);
             PerformLayout();

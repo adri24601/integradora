@@ -26,6 +26,7 @@ namespace integra_1
                 return;
             }
 
+            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
             // Configurar la impresión nativa de Windows
             System.Drawing.Printing.PrintDocument pd = new System.Drawing.Printing.PrintDocument();
             pd.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CrearTicket);
@@ -37,6 +38,31 @@ namespace integra_1
             {
                 pd.Print(); // Lanza el proceso de dibujado
 
+
+                // Recorrer el carrito para restar las existencias de cada producto vendido
+                foreach (DataGridViewRow fila in dgvCarrito.Rows)
+                {
+                    if (fila.Cells["Nombre"].Value == null) continue;
+
+                    // Nota: Como en tu buscador usaste el ID del producto, necesitamos guardar el ID en alguna columna oculta 
+                    // o buscar por nombre. Lo ideal es que tu dgvCarrito tenga el ID a la mano.
+                    string nombreProducto = fila.Cells["Nombre"].Value.ToString();
+                    int cantidadVendida = Convert.ToInt32(fila.Cells["Cantidad"].Value);
+
+                    string consultaRestar = "UPDATE Productos SET Cantidad_Producto = Cantidad_Producto - ? WHERE Nombre_Producto = ?";
+
+                    using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                    {
+                        using (OleDbCommand comando = new OleDbCommand(consultaRestar, conexion))
+                        {
+                            comando.Parameters.AddWithValue("@cantidad", cantidadVendida);
+                            comando.Parameters.AddWithValue("@nombre", nombreProducto);
+
+                            conexion.Open();
+                            comando.ExecuteNonQuery();
+                        }
+                    }
+                }
                 // Limpiar todo para dejar listo para la siguiente venta
                 dgvCarrito.Rows.Clear();
                 lblTotal_a_Pagar.Text = "Total a pagar: $0.00";
@@ -45,7 +71,7 @@ namespace integra_1
         }
 
 
-            private void CrearTicket(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void CrearTicket(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
             Font fuenteTitulo = new Font("Arial", 11, FontStyle.Bold);
@@ -102,10 +128,10 @@ namespace integra_1
 
             g.DrawString("¡Muchas gracias por su compra!", fuenteNormal, Brushes.Black, x + 30, y);
         }
-        
+
 
         // Aquí es donde se "dibuja" el diseño del ticket
-      
+
 
         private void btnAgregar_Producto_Venta_Click(object sender, EventArgs e)
         {
@@ -146,7 +172,7 @@ namespace integra_1
                             // 3. Insertar los datos directamente en las columnas de la tabla gris
                             int cantidad = 1;
                             double subtotal = precio * cantidad;
-                            dgvCarrito.Rows.Add( nombre, precio, cantidad, subtotal);
+                            dgvCarrito.Rows.Add(nombre, precio, cantidad, subtotal);
 
                             // 4. Actualizar la etiqueta del total acumulado
                             ActualizarTotal();
@@ -178,6 +204,11 @@ namespace integra_1
             }
             // Modifica 'lblTotal' por el nombre que le diste a tu etiqueta de "Total a pagar"
             lblTotal_a_Pagar.Text = "Total a pagar: $" + total.ToString("N2");
+        }
+
+        private void FrmVentas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
