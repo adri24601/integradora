@@ -62,6 +62,7 @@
             dgvProductos.RowHeadersWidth = 62;
             dgvProductos.Size = new Size(640, 393);
             dgvProductos.TabIndex = 3;
+            dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             dgvProductos.DataError += dgvProductos_DataError;
             // 
             // btnModificarProducto

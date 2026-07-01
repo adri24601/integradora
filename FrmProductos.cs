@@ -92,12 +92,17 @@ namespace integra_1
                 ventanaEdicion.ShowDialog();
 
                 // 5. Al cerrarse, refresca la tabla automáticamente para ver los cambios
-            
+
             }
             else
             {
                 MessageBox.Show("Por favor, selecciona primero un producto de la tabla gris.");
             }
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
