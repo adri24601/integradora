@@ -28,60 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnNuevoProducto = new Button();
             label1 = new Label();
-            dgvProductos = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            panel1 = new Panel();
+            panel2 = new Panel();
             SuspendLayout();
             // 
-            // button1
+            // btnNuevoProducto
             // 
-            button1.Location = new Point(567, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(221, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Agregar Producto";
-            button1.UseVisualStyleBackColor = true;
+            btnNuevoProducto.Location = new Point(294, 312);
+            btnNuevoProducto.Name = "btnNuevoProducto";
+            btnNuevoProducto.Size = new Size(221, 38);
+            btnNuevoProducto.TabIndex = 0;
+            btnNuevoProducto.Text = "+ Nuevo Producto";
+            btnNuevoProducto.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(402, 16);
+            label1.Location = new Point(342, 179);
             label1.Name = "label1";
             label1.Size = new Size(59, 25);
             label1.TabIndex = 2;
             label1.Text = "label1";
             // 
-            // dgvProductos
+            // panel1
             // 
-            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(159, 53);
-            dgvProductos.Name = "dgvProductos";
-            dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(640, 394);
-            dgvProductos.TabIndex = 3;
-            dgvProductos.DataError += dgvProductos_DataError;
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Location = new Point(1, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(174, 448);
+            panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.HotTrack;
+            panel2.Location = new Point(181, 1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(619, 107);
+            panel2.TabIndex = 4;
             // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dgvProductos);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btnNuevoProducto);
             Name = "FrmProductos";
             Text = "Form2";
             Load += FrmProductos_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
+        private Button btnNuevoProducto;
         private Label label1;
-        private DataGridView dgvProductos;
+        private Panel panel1;
+        private Panel panel2;
     }
 }

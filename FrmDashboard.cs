@@ -1,109 +1,81 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
+﻿using System;  // Contiene funciones basicas de C#
+using System.Collections.Generic;   // Permite usar colecciones como List y Dictionary
+using System.ComponentModel;     // Proporciona clases para componentes y propiedades
+using System.Data;  // Permite trabajar con datos y bases de datos
+using System.Drawing;  // Permite usar colores, imágenes y fuentes
+using System.Text;   // Contiene clases para manipular texto
+using System.Windows.Forms;  // Biblioteca para crear aplicaciones Windows Forms
+             
 namespace integra_1
 {
-    public partial class FrmDashboard : Form
+    // namespace - sirve para organizar el código
+    // integra_1 - nombre del proyecto donde se encuentra la clase
+
+    public partial class FrmDashboard : Form  // Constructor del formulario
     {
         public FrmDashboard()
         {
-            InitializeComponent();
+            InitializeComponent();   // Inicializa todos los controles del formulario
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmProductos frm = new FrmProductos();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmDashboard menu = new FrmDashboard();
-            menu.Show();
-
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
             this.Hide();
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmInventario frm = new FrmInventario();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
+
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmProveedores frm = new FrmProveedores();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
-            FrmVentas frm = new FrmVentas();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
-            frm.Show();
+            // duda 
+            // boton no visible 
+            // formulario creado
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmReportes frm = new FrmReportes();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
         }
 
         private void btnCerrar_Sesion_Click(object sender, EventArgs e)
         {
-            Form1 menu = new Form1();
-            menu.Show();
-
+            FrmCerrar_Sesión frm = new FrmCerrar_Sesión();
+            frm.Show();
             this.Hide();
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

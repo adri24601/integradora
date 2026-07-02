@@ -1,6 +1,6 @@
 ﻿namespace integra_1
 {
-    partial class FrmInventario
+    partial class FrmAyuda
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +31,11 @@
             panel1 = new Panel();
             panel2 = new Panel();
             btnMenu_Inicio = new Button();
-            btnProductos = new Button();
+            btnProducto = new Button();
             btnInventario = new Button();
             btnProveedores = new Button();
-            btnReportes = new Button();
             btnAyuda = new Button();
+            btnReportes = new Button();
             btnCerrar_Sesión = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -43,13 +43,14 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(btnCerrar_Sesión);
             panel1.Controls.Add(btnMenu_Inicio);
+            panel1.Controls.Add(btnProducto);
             panel1.Controls.Add(btnInventario);
-            panel1.Controls.Add(btnAyuda);
             panel1.Controls.Add(btnProveedores);
+            panel1.Controls.Add(btnAyuda);
             panel1.Controls.Add(btnReportes);
-            panel1.Location = new Point(1, 1);
+            panel1.Controls.Add(btnCerrar_Sesión);
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(191, 444);
             panel1.TabIndex = 0;
@@ -57,85 +58,83 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.HotTrack;
-            panel2.Location = new Point(198, 5);
+            panel2.Location = new Point(224, 9);
             panel2.Name = "panel2";
-            panel2.Size = new Size(595, 99);
+            panel2.Size = new Size(565, 77);
             panel2.TabIndex = 1;
             // 
             // btnMenu_Inicio
             // 
-            btnMenu_Inicio.Location = new Point(32, 60);
+            btnMenu_Inicio.Location = new Point(44, 121);
             btnMenu_Inicio.Name = "btnMenu_Inicio";
-            btnMenu_Inicio.Size = new Size(116, 43);
+            btnMenu_Inicio.Size = new Size(107, 32);
             btnMenu_Inicio.TabIndex = 2;
             btnMenu_Inicio.Text = "Inicio";
             btnMenu_Inicio.UseVisualStyleBackColor = true;
             // 
-            // btnProductos
+            // btnProducto
             // 
-            btnProductos.Location = new Point(33, 110);
-            btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(123, 42);
-            btnProductos.TabIndex = 3;
-            btnProductos.Text = "Productos";
-            btnProductos.UseVisualStyleBackColor = true;
+            btnProducto.Location = new Point(44, 159);
+            btnProducto.Name = "btnProducto";
+            btnProducto.Size = new Size(110, 35);
+            btnProducto.TabIndex = 3;
+            btnProducto.Text = "Producto";
+            btnProducto.UseVisualStyleBackColor = true;
             // 
             // btnInventario
             // 
-            btnInventario.Location = new Point(33, 157);
+            btnInventario.Location = new Point(44, 200);
             btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(122, 39);
+            btnInventario.Size = new Size(105, 32);
             btnInventario.TabIndex = 4;
             btnInventario.Text = "Inventario";
             btnInventario.UseVisualStyleBackColor = true;
             // 
             // btnProveedores
             // 
-            btnProveedores.Location = new Point(32, 211);
+            btnProveedores.Location = new Point(31, 238);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(122, 33);
+            btnProveedores.Size = new Size(104, 33);
             btnProveedores.TabIndex = 5;
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = true;
             // 
-            // btnReportes
-            // 
-            btnReportes.Location = new Point(31, 250);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(117, 39);
-            btnReportes.TabIndex = 6;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
-            // 
             // btnAyuda
             // 
-            btnAyuda.Location = new Point(31, 295);
+            btnAyuda.Location = new Point(30, 333);
             btnAyuda.Name = "btnAyuda";
-            btnAyuda.Size = new Size(120, 38);
-            btnAyuda.TabIndex = 7;
+            btnAyuda.Size = new Size(97, 32);
+            btnAyuda.TabIndex = 6;
             btnAyuda.Text = "Ayuda";
             btnAyuda.UseVisualStyleBackColor = true;
             // 
+            // btnReportes
+            // 
+            btnReportes.Location = new Point(30, 293);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(99, 34);
+            btnReportes.TabIndex = 7;
+            btnReportes.Text = "Reportes";
+            btnReportes.UseVisualStyleBackColor = true;
+            // 
             // btnCerrar_Sesión
             // 
-            btnCerrar_Sesión.Location = new Point(33, 339);
+            btnCerrar_Sesión.Location = new Point(30, 366);
             btnCerrar_Sesión.Name = "btnCerrar_Sesión";
-            btnCerrar_Sesión.Size = new Size(121, 43);
+            btnCerrar_Sesión.Size = new Size(105, 36);
             btnCerrar_Sesión.TabIndex = 8;
             btnCerrar_Sesión.Text = "Cerrar Sesión";
             btnCerrar_Sesión.UseVisualStyleBackColor = true;
             // 
-            // FrmInventario
+            // FrmAyuda
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnProductos);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "FrmInventario";
-            Text = "Form2";
-            Load += Form2_Load;
+            Name = "FrmAyuda";
+            Text = "Form1";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -145,11 +144,11 @@
         private Panel panel1;
         private Panel panel2;
         private Button btnMenu_Inicio;
-        private Button btnProductos;
+        private Button btnProducto;
         private Button btnInventario;
         private Button btnProveedores;
-        private Button btnReportes;
         private Button btnAyuda;
+        private Button btnReportes;
         private Button btnCerrar_Sesión;
     }
 }

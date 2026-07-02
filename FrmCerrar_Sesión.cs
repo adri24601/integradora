@@ -8,11 +8,12 @@ using System.Windows.Forms;
 
 namespace integra_1
 {
-    public partial class FrmVentas : Form
+    public partial class FrmCerrar_Sesión : Form
     {
-        public FrmVentas()
+        public FrmCerrar_Sesión()
         {
             InitializeComponent();
         }
+
     }
 }
