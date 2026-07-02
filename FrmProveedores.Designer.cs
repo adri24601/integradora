@@ -28,35 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
+            btnModificarProveedores = new Button();
+            btnAgregarProveedor = new Button();
+            dgvProveedores = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // btnModificarProveedores
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Location = new Point(355, 116);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(300, 150);
-            tableLayoutPanel1.TabIndex = 0;
+            btnModificarProveedores.Location = new Point(382, 47);
+            btnModificarProveedores.Name = "btnModificarProveedores";
+            btnModificarProveedores.Size = new Size(112, 34);
+            btnModificarProveedores.TabIndex = 1;
+            btnModificarProveedores.Text = "Modificar";
+            btnModificarProveedores.UseVisualStyleBackColor = true;
+            btnModificarProveedores.Click += button1_Click;
+            // 
+            // btnAgregarProveedor
+            // 
+            btnAgregarProveedor.Location = new Point(546, 47);
+            btnAgregarProveedor.Name = "btnAgregarProveedor";
+            btnAgregarProveedor.Size = new Size(112, 34);
+            btnAgregarProveedor.TabIndex = 2;
+            btnAgregarProveedor.Text = "Agregar";
+            btnAgregarProveedor.UseVisualStyleBackColor = true;
+            btnAgregarProveedor.Click += btnAgregarProveedor_Click;
+            // 
+            // dgvProveedores
+            // 
+            dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProveedores.Location = new Point(264, 105);
+            dgvProveedores.Name = "dgvProveedores";
+            dgvProveedores.RowHeadersWidth = 62;
+            dgvProveedores.Size = new Size(488, 310);
+            dgvProveedores.TabIndex = 0;
             // 
             // FrmProveedores
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(dgvProveedores);
+            Controls.Add(btnAgregarProveedor);
+            Controls.Add(btnModificarProveedores);
             Name = "FrmProveedores";
             Text = "Form2";
+            Load += FrmProveedores_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TableLayoutPanel tableLayoutPanel1;
+        private Button btnModificarProveedores;
+        private Button btnAgregarProveedor;
+        private DataGridView dgvProveedores;
     }
 }
